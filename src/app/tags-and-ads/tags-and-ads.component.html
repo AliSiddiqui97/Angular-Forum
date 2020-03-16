@@ -1,0 +1,30 @@
+<div class="col-12">
+    <div class="row border bg-light pl-2">
+        <div >
+            <ng-container *ngFor = "let tag of ObjectTags">
+                <a href="{{tag.link}}"> {{"#"+tag.tagName+", "}} </a>
+            </ng-container>
+        </div>
+        <br>
+        <div class="pl-2">
+            <h3>Categories:</h3>
+            <ul>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <li> Category 1</li>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <li> Category 2</li>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <li> Category 3</li>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <li> Category 4</li>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <li> Category 5</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <img src="../../assets/160x600.png" >
+    </div>
+    
+</div>

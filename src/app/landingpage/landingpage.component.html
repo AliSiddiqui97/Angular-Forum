@@ -1,0 +1,52 @@
+<!-- Main Div -->
+<div class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 m-0">
+
+    <!-- Threads Div Card -->
+    <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 mr-auto ml-auto mt-2 p-0 " >
+        <!-- Threads -->
+        <ng-container *ngFor="let status of ObjectofStatus | slice: startIndex:endIndex">
+            <div class="card mb-2 pb-0 bg-light"  >
+                <div class="row no-gutters">
+                    <div class="col-md-4 pb-0 " >
+                        <img src="{{status.userImage}}" class="card-img "  style="max-height: 250px!important;">
+                    </div>
+                    <div class=" col-md-8 ">
+                        <div class="card-body pb-0 container " >
+                            <h5 class="card-title">{{status.title}}</h5>
+                            <p class="card-text">{{status.status.substring(0, 300)}}</p>
+                            <p class="card-text"><small class="text-muted">{{"Last updated " + status.time }}</small></p>                           
+                        </div>
+                        
+                         <button (click)="countClick(status.statusId)"> 
+                            <i class="fal fa-thumbs-up"></i>
+                            {{status.likes}}</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </ng-container>
+        <!-- threads end -->
+        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              
+                <li *ngFor="let pgnumb of functionToGetNumber(ObjectofStatus.length); let i = index;" class="page-item">
+                    <a (click)="updateNumber(i)" class="page-link">
+                        {{i + 1 }}
+                    </a>
+                </li>
+               
+            </ul>
+        </nav>
+        <!-- Pagination End -->
+        
+    </div>
+    <!-- Threads Div end -->
+    
+    <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 mr-auto ml-auto mt-2 p-0" >
+        <app-tags-and-ads></app-tags-and-ads>
+    </div>
+
+
+</div>
