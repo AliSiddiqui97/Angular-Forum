@@ -1,30 +1,42 @@
  
-<div class="row mt-2 col-12 border-top">
+<div class="row pt-2 col-12 bg-light mr-auto ml-auto border-top border-bottom pb-4">
     <!-- Profile Bio -->
-    <div class="col-12  col-lg-3 text-center border-right pl-2 ">
+    <section class="col-12  col-lg-3 text-center border-right pl-2 ">
         <ng-container *ngFor="let bio of objectBio ">
             <div class="row col-12 col-md-12 col-lg-12 col-xl-12 text-center mr-auto ml-auto">
                 <img class="rounded " src="{{bio.userImg}}" style="height:250px; width:250px">
             </div>
             <div class="row col-12 ">
-            <ul>
-                <h4><strong>Name:</strong>{{" " +bio.userName}}</h4>
-                <h5><strong>Level:</strong>{{" "+bio.userLevel}}</h5>
-                <h5><strong>Bike:</strong> {{" " +bio.userBike}}</h5>
-                <h5><strong>Driving Since:</strong> {{" " +bio.drivingSince}}</h5>
-                <h5><strong>Favorite Brand:</strong> {{"" +bio.favBrand}}</h5>
-                <h5><strong>Biography:</strong>{{""+ bio.bio}}</h5>
-            </ul>
+            <section class="col-6">
+                
+                    <h6>Name:</h6>
+                    <h6>Level:</h6>
+                    <h6>Bike:</h6>
+                    <h6>Driving Since:</h6>
+                    <h6>Favorite Brand:</h6>
+                    <h6>Biography:</h6>
+                
+            
+                <h6>{{" " +bio.userName}}</h6>
+                <h6>{{" "+bio.userLevel}}</h6>
+                <h6>{{" " +bio.userBike}}</h6>
+                <h6>{{" " +bio.drivingSince}}</h6>
+                <h6>{{"" +bio.favBrand}}</h6>
+                <h6>{{""+ bio.bio}}</h6>
+            </section>
                 
             </div> 
         </ng-container>
         
-    </div>
+    </section>
     <!-- End Profile Bio -->
 
     <!-- Profile Form -->
-    <div class="col-12 col-lg-5">
+    <section class="col-12 col-lg-5">
         <app-profileform></app-profileform>
-    </div>
+    </section>
     <!-- End profile Form -->
+    <section class="col-12  col-lg-3">
+        <app-tags-and-ads></app-tags-and-ads>
+    </section>
 </div>

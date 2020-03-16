@@ -1,13 +1,15 @@
-<div class="col-12">
-    <div class="row border bg-light pl-2">
-        <div >
+<section class="col-12 bg-white border">
+    <section class="row pl-2">
+        <h5>Search By:</h5>
+        <nav>
             <ng-container *ngFor = "let tag of ObjectTags">
                 <a href="{{tag.link}}"> {{"#"+tag.tagName+", "}} </a>
             </ng-container>
-        </div>
-        <br>
-        <div class="pl-2">
-            <h3>Categories:</h3>
+        </nav>
+        <br/>
+        <br/>
+        <div class=" mt-5">
+            <h5>Categories:</h5>
             <ul>
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <li> Category 1</li>
@@ -21,10 +23,10 @@
                 <li> Category 5</li>
             </ul>
         </div>
-    </div>
+    </section>
     <br>
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center">
         <img src="../../assets/160x600.png" >
-    </div>
+    </div> -->
     
-</div>
+</section>
