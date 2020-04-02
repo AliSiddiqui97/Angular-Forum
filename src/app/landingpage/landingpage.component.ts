@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ApiService } from '../api.service';
 @Component({
   selector: 'app-landingpage',
   templateUrl: './landingpage.component.html',
@@ -102,7 +102,25 @@ export class LandingpageComponent implements OnInit {
 
 ]
 
-  constructor() { }
+// title: 
+// message: 
+// nooflikes:
+// noofcomments: 
+// tags: 
+// category: 
+// userID: 
+// date: 
+
+threads;
+  constructor(
+    private threadsService: ApiService,
+  ) { }
+
+  ngOnInit(): void {
+    this.threads = this.threadsService.getThreads();
+    console.log(this.threads);
+  }
+
   functionToGetNumber(length){
     return new Array(Math.floor(length/4));
   }
@@ -110,8 +128,7 @@ export class LandingpageComponent implements OnInit {
     this.startIndex = pageIndex*4;
     this.endIndex = this.startIndex+4;
   }
-  ngOnInit(): void {
-  }
+ 
   countClick(number:number) {
     console.log("liked")
     this.ObjectofStatus[number-1].likes =this.ObjectofStatus[number-1].likes+1;
